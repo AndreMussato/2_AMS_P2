@@ -80,6 +80,50 @@ function Game({
                         )
                     )}
                 </div>
+
+                {/* Área onde o jogador digita uma letra */}
+                <div className="letterContainer">
+                    <p> Tente advinhar uma letra da palavra: </p>
+
+                    {/* Quando o formulário for enviado, executa
+                    a função handleSubmit */}
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" name="letter"
+                            maxLength="1" //Permite digitar apenas um caractere
+                            required //torna o preenchimento obrigatório
+                            //Sempre que o usuário digitar algo,
+                            //atualiza o estado letter
+                            onChange={(e) =>
+                                setLetter(e.target.value)
+                            }
+                            //O valor do input será o estado letter
+                            value={letter}
+                            //Associa o input à referência criada com useRef
+                            ref={letterInputRef}
+                        />
+
+                        {/* Envia o formulário */}
+                        <button>Jogar!</button>
+                    </form>
+
+                    {/* Área que mostra as letras erradas já utilizaddas */}
+                    <div className="wordLettersContainer">
+                        <p>Letras já utilizadas:</p>
+
+                        {/* Percorre o array de letras erradas
+                        
+                        wrongLetters = letras erradas
+                        letter = cada letra errada
+                        i = índice/posição
+                        */}
+                        {wrongLetters.map((letter, i) => (
+                            //Exibe cada letra errada
+                            <span key={i}>
+                                {letter}, 
+                            </span>
+                        ))}
+                    </div>
+                </div>
             </div>
         </>
     )

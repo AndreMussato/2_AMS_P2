@@ -1,0 +1,54 @@
+.game h1 {
+    font-size: 2.5em;
+}
+
+.points span {
+    font-weight: bold;
+}
+
+.tip span {
+    color: #ecfa00;
+}
+
+.wordContainer {
+    margin: 1.5em;
+    padding: 1.5em;
+    border: 20px solid #ecfa00;
+    /* Organiza os elementos filhos utilizando o flexbox.
+    Por padrão, os elementos ficam posicionados lado a lado. */
+    display: flex;
+}
+
+.letter,
+.blankSquare {
+    font-size: 70px;
+    /* Define a altura da linha do texto.
+    O valor 1.5 significa 1,5 vezes o tamanho atual da fonte. */
+    line-height: 1.5;
+    border: 3px solid #000;
+    height: 100px;
+    width: 100px;
+    /* Transforma visualmente o texto em letras maiúsculas,
+    sem alterar o valor original armazenado. */
+    text-transform: uppercase;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+.letterContainer p {
+    display: flex;
+    /* Alinha os elementos verticalmente dentro do Flexbox */
+    align-items: center;
+    /* Alinha os elementos horizontalmente dentro do Flexbox */
+    justify-content: center;
+}
+
+.letterContainer input {
+    height: 50px;
+    width: 50px;
+    font-size: 2em;
+    /* Centraliza horizontalmente o texto digitado dentro do input */
+    text-align: center;
+    margin-left: 1em;
+}
